@@ -111,9 +111,18 @@ async function boot() {
     showLocked("The dashboard is built and waiting for the Caresits account service to go live.");
     return;
   }
-  const { initializeApp } = await import(`${SDK}/firebase-app.js`);
-  const authMod = await import(`${SDK}/firebase-auth.js`);
-  const fsMod = await import(`${SDK}/firebase-firestore.js`);
+  // The door stands from the first paint: the lock holds the sign
+  // in button, so it shows before the account service answers.
+  showLocked();
+  let initializeApp, authMod, fsMod;
+  try {
+    ({ initializeApp } = await import(`${SDK}/firebase-app.js`));
+    authMod = await import(`${SDK}/firebase-auth.js`);
+    fsMod = await import(`${SDK}/firebase-firestore.js`);
+  } catch (e) {
+    showLocked("We could not reach the account service just now. Please check your connection and reload.");
+    return;
+  }
   const app = initializeApp(firebaseConfig);
   const auth = authMod.getAuth(app);
   const db = fsMod.getFirestore(app);
