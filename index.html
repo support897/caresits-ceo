@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caresits · CEO Dashboard</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="lock" class="lock" hidden>
+  <img src="icon.svg" alt="" width="54" height="54">
+  <h1>Owner only</h1>
+  <p>This dashboard reads numbers for the owner of Caresits. Sign in with the owner account to open it.</p>
+  <button id="lockGoogle" class="door">Continue with Google</button>
+  <p class="small" id="lockMsg" role="status"></p>
+</div>
+
+<div id="app" class="layout" hidden>
+  <aside class="side">
+    <div class="brand"><img src="icon.svg" alt="" width="38" height="38"><span>Caresits CEO</span></div>
+    <nav id="nav">
+      <button data-sec="overview" class="on">Overview</button>
+      <button data-sec="people">People</button>
+      <button data-sec="money">Money</button>
+      <button data-sec="reviews">Reviews</button>
+      <button data-sec="outreach">Outreach</button>
+      <button data-sec="community">Community</button>
+      <button data-sec="avatars">Avatars</button>
+    </nav>
+    <p class="small dim">Numbers only, never people. This dashboard reads totals, not anyone's account.</p>
+    <button id="out" class="door light">Sign out</button>
+  </aside>
+  <main>
+    <section id="sec-overview" class="sec">
+      <h1>How is Caresits doing?</h1>
+      <div class="trio">
+        <div class="stat"><span class="num" id="ovJoined">0</span><span class="lbl">joined, all time</span></div>
+        <div class="stat"><span class="num" id="ovPaying">0</span><span class="lbl">paying now</span></div>
+        <div class="stat"><span class="num" id="ovLeaving">0</span><span class="lbl">leaving (pending)</span></div>
+      </div>
+      <h2>The weeks</h2>
+      <table id="weekTable"><thead><tr><th>Week</th><th>Joined</th></tr></thead><tbody></tbody></table>
+      <p class="small dim" id="zeroNote">Reads zero until real users exist. Nothing here is estimated or invented.</p>
+    </section>
+
+    <section id="sec-people" class="sec" hidden>
+      <h1>People</h1>
+      <div class="trio">
+        <div class="stat"><span class="num" id="pTotal">0</span><span class="lbl">signups, all time</span></div>
+        <div class="stat"><span class="num" id="pWeek">0</span><span class="lbl">new this week</span></div>
+        <div class="stat"><span class="num" id="pActive">0</span><span class="lbl">activated within 7 days</span></div>
+        <div class="stat"><span class="num" id="pReturn">0</span><span class="lbl">returned in 7 days</span></div>
+      </div>
+      <p class="small">Activated means the person did the one core thing: a family finished the questionnaire, or a carer finished their profile.</p>
+    </section>
+
+    <section id="sec-money" class="sec" hidden>
+      <h1>Money</h1>
+      <div class="trio">
+        <div class="stat"><span class="num" id="mPaying">0</span><span class="lbl">paying</span></div>
+        <div class="stat"><span class="num" id="mPending">0</span><span class="lbl">cancels, pending</span></div>
+        <div class="stat"><span class="num" id="mEnded">0</span><span class="lbl">cancels, ended</span></div>
+        <div class="stat"><span class="num" id="mFailed">0</span><span class="lbl">failed payments</span></div>
+      </div>
+      <p class="small">Monthly money, estimated for steering: <b id="mMrr">A$0</b>. The payment provider is the accounting truth; this number guides, it does not account.</p>
+      <p class="small">Finding is A$14.95 a month with no free month. Family Plus keeps its free month. Every subscription for Caresits lands here and nowhere else.</p>
+      <h2>Latest subscription events</h2>
+      <ul id="feedList" class="feed"></ul>
+      <p class="small dim" id="feedEmpty">No events yet.</p>
+    </section>
+
+    <section id="sec-reviews" class="sec" hidden>
+      <h1>Reviews</h1>
+      <div class="trio">
+        <div class="stat"><span class="num" id="rCount">0</span><span class="lbl">reviews</span></div>
+        <div class="stat"><span class="num" id="rStrangers">0</span><span class="lbl">notes from strangers</span></div>
+      </div>
+      <p class="small">Store reviews appear here when the store feeds connect. Until then the inbox is manual, and nothing is ever invented.</p>
+    </section>
+
+    <section id="sec-outreach" class="sec" hidden>
+      <h1>Outreach</h1>
+      <p class="small" id="oState">Not running yet. This area opens when the first cold email campaign runs.</p>
+      <div class="trio">
+        <div class="stat"><span class="num" id="oSent">0</span><span class="lbl">sent</span></div>
+        <div class="stat"><span class="num" id="oReplies">0</span><span class="lbl">replies</span></div>
+      </div>
+    </section>
+
+    <section id="sec-community" class="sec" hidden>
+      <h1>Community</h1>
+      <ul id="groupList" class="feed"></ul>
+      <p class="small dim" id="groupEmpty">No groups tracked yet. Numbers here are manual or from a connected feed, and labelled which.</p>
+    </section>
+
+    <section id="sec-avatars" class="sec" hidden>
+      <h1>Avatars</h1>
+      <p class="small">Caresits avatars only. Views and sales arrive from the content feed; a sale counts only when the payment record names the piece.</p>
+      <div id="avatarList"></div>
+    </section>
+  </main>
+</div>
+<script type="module" src="ceo.js"></script>
+</body>
+</html>
