@@ -1,6 +1,5 @@
 // Caresits accounts — Firebase config plug point.
-// LIVE: the Caresits production project (caresits-812a0), created
-// in Ilse's signed-in session via PB's chair, 15 Oct 2026.
+// LIVE: the Caresits production project (caresits-812a0).
 // One project per app: never put another app's keys here.
 export const firebaseConfig = {
   apiKey: "AIzaSyDbi4vqhN6I7Zz7_-6-ZQSZzd3MnQiYBCE",
