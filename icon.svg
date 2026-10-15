@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <rect width="240" height="240" rx="52" fill="#F1DDBF"/>
+  <!-- heart, deep warm beige-tan (her locked art, measured) -->
+  <path d="M120 208 C 62 168 40 132 40 98 C 40 70 60 54 82 54 C 98 54 112 63 120 76 C 128 63 142 54 158 54 C 180 54 200 70 200 98 C 200 132 178 168 120 208 Z" fill="#E6AD9E"/>
+  <!-- figures, pale cream: carer (bun + dress) holding the child's hand -->
+  <g fill="#F3DDBB">
+    <circle cx="92" cy="86" r="7"/><!-- bun -->
+    <circle cx="92" cy="102" r="16"/><!-- carer head -->
+    <path d="M92 116 L66 122 L60 138 L76 130 L72 168 L112 168 L108 130 L126 140 L132 126 L106 116 Z"/><!-- dress + arms -->
+    <rect x="80" y="168" width="9" height="18" rx="4"/>
+    <rect x="97" y="168" width="9" height="18" rx="4"/>
+    <circle cx="152" cy="108" r="13"/><!-- child head -->
+    <path d="M152 120 L132 126 L126 140 L140 132 L138 162 L166 162 L164 132 L176 140 L181 128 L164 120 Z"/><!-- child dress + arms -->
+    <rect x="143" y="162" width="8" height="16" rx="4"/>
+    <rect x="155" y="162" width="8" height="16" rx="4"/>
+  </g>
+</svg>
